@@ -1,0 +1,17 @@
+<h1>What are you doing right now?</h1>
+
+<%= form_for @message do |f| %>
+ <% if @message.errors.any? %>
+ 	<div class="alert alert-danger">
+ 		<h4>Oh no! You have errors:</h4>
+ 		<ul>
+ 			<%- @message.errors.full_messages.each do |msg| %>
+ 				<li><%= msg %></li>
+ 			<% end %>
+ 		</ul>
+ 	</div>
+ <% end %>
+ <%= f.text_field :body %>
+
+ <%= f.submit "Post" %>
+<% end %>

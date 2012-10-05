@@ -1,0 +1,15 @@
+<table class="table">
+	<% @messages.each do |message| %>
+		<tr>
+			<td>
+				<%= message.user.username %>
+			</td>
+			<td>
+				<p class="lead" style="margin-bottom:6px"><%= message.body %></p>
+				<p class="muted">
+					<%= message.created_at.strftime("%m/%d/%Y %l:%M %p") %>
+				</p>
+			</td>
+		</tr>
+	<% end %>
+</table>

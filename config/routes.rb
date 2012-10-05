@@ -1,4 +1,6 @@
 Msger::Application.routes.draw do
+  resources :messages, :only => [:new, :create]
+
   devise_for :users, :path => "users", :path_names => { :sign_in => 'login', :sign_out => 'logout', :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'sign_up' }
   #devise_for :users
   root :to => "home#index"
